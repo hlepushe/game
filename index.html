@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Игра-кликер</title>
+    <style>
+        body {
+            background-image: url('assets/fon.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #counter {
+            background-image: url('assets/schet.png');
+            background-size: cover;
+            width: 180px;
+            height: 50px;
+            text-align: center;
+            font-size: 40px;
+            color: rgb(0, 0, 0);
+            margin-top: 10px;
+        }
+
+        #button {
+            background-image: url('assets/knop1.png');
+            background-size: cover;
+            width: 350px;
+            height: 350px;
+            cursor: pointer;
+        }
+
+        #button:active {
+            background-image: url('assets/knop2.png');
+        }
+    </style>
+</head>
+<body>
+    <div id="counter">0</div>
+    <div id="button" onclick="incrementCounter()"></div>
+
+    <script>
+        let count = 0;
+        const counter = document.getElementById("counter");
+
+        function incrementCounter() {
+            count++;
+            counter.innerText = count;
+
+            // Limit the count to a maximum of 1000
+            if (count > 1000) {
+                count = 1000;
+                counter.innerText = count;
+            }
+        }
+    </script>
+</body>
+</html>
